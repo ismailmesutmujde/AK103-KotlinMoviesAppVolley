@@ -50,5 +50,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // Volley
+    implementation("com.android.volley:volley:1.2.1")
 
+    // Picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
 }

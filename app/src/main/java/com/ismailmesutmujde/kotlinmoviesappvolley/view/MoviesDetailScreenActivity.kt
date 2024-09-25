@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ismailmesutmujde.kotlinmoviesappvolley.R
 import com.ismailmesutmujde.kotlinmoviesappvolley.databinding.ActivityMoviesDetailScreenBinding
 import com.ismailmesutmujde.kotlinmoviesappvolley.model.Movies
+import com.squareup.picasso.Picasso
 
 class MoviesDetailScreenActivity : AppCompatActivity() {
     private lateinit var bindingMoviesDetail : ActivityMoviesDetailScreenBinding
@@ -19,6 +20,8 @@ class MoviesDetailScreenActivity : AppCompatActivity() {
         bindingMoviesDetail.textViewMovieNameDetail.text = movie.movie_name
         bindingMoviesDetail.textViewMovieYearDetail.text = (movie.movie_year).toString()
         bindingMoviesDetail.textViewMovieDirectorDetail.text = movie.director.director_name
-        bindingMoviesDetail.imageViewMoviePoster.setImageResource(resources.getIdentifier(movie.movie_poster,"drawable",packageName))
+        val url = "http://kasimadalan.pe.hu/filmler/resimler/${movie.movie_poster}"
+        Picasso.get().load(url).into(bindingMoviesDetail.imageViewMoviePoster)
+        //bindingMoviesDetail.imageViewMoviePoster.setImageResource(resources.getIdentifier(movie.movie_poster,"drawable",packageName))
     }
 }
